@@ -1,0 +1,16 @@
+<div>
+  <button (click)="toggleSidebar()">
+    toggle sidebar
+  </button>
+
+  <hr>
+
+  <div>
+    {{(expandSidebar$ | async)}}
+  </div>
+  <hr>
+  <button (click)="getTestData()">
+    get test data
+  </button>
+</div>
+
