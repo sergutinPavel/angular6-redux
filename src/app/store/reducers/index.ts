@@ -21,7 +21,7 @@ export const metaReducers: MetaReducer<State>[] = !environment.production ? [] :
 
 
 // GENERAL STATE SELECTOR
-export const getGeneralState = (state) => {
+export const getGeneralState = (state): fromGeneral.State => {
   // console.warn('general state', state);
   return state.general;
 };

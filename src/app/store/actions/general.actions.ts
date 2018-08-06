@@ -15,7 +15,7 @@ export enum GeneralActionTypes {
 
 export class ToggleSidebarAction implements Action {
   readonly type = GeneralActionTypes.ToggleSidebarAction;
-  constructor(public payload?: boolean) {}
+  constructor(public payload?: undefined | boolean) {}
 }
 
 export class GetTestDataAction implements Action {

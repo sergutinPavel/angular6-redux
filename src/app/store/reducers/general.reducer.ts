@@ -26,7 +26,7 @@ export function reducer(state = initialState, action: GeneralActions): State {
   switch (action.type) {
     case GeneralActionTypes.ToggleSidebarAction:
       // console.log('GeneralActionTypes.ToggleSidebarAction', action.payload);
-      return { ...state, expandSidebar: !state.expandSidebar };
+      return { ...state, expandSidebar: action.payload !== undefined ? action.payload : !state.expandSidebar };
     case GeneralActionTypes.GetTestDataAction:
       return { ...state, testData: null, testDataStatus: { loading: true, loaded: false, error: false } };
     case GeneralActionTypes.GetTestDataActionSuccess:
