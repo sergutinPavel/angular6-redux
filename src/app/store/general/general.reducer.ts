@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { GeneralActionTypes, GeneralActions } from '../actions/general.actions';
+import { GeneralActionTypes, GeneralActions } from './general.actions';
 
 
 export interface State {

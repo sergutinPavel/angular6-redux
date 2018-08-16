@@ -1,0 +1,65 @@
+.root-page-layout {
+  padding: 0;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+$sidebar-width: 20rem;
+app-page-layout {
+  padding: 0;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  .app-page-layout__sidebar {
+    background-color: #eee;
+    overflow-x: hidden;
+    width: $sidebar-width;
+    padding: 0;
+  }
+  .app-page-layout__sidebar:not(.cover) {
+    width: 0;
+    transition: width 0.4s ease-in;
+    &.open {
+      width: $sidebar-width;
+      transition: width 0.4s ease-out;
+    }
+  }
+  .app-page-layout__sidebar.cover {
+    width: $sidebar-width;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin-left: -$sidebar-width;
+    transition: margin 0.4s ease-in;
+    &.open {
+      margin-left: 0;
+      transition: margin 0.4s ease-out;
+    }
+  }
+  .app-page-layout__wrapper {
+    background-color: #fff;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .app-page-layout__header,
+  .app-page-layout__container,
+  .app-page-layout__footer {
+    width: 100%;
+  }
+  .app-page-layout__header {
+    height: 6rem;
+  }
+  .app-page-layout__container {
+    flex: 1;
+  }
+  .app-page-layout__footer {
+    height: 6rem;
+  }
+}

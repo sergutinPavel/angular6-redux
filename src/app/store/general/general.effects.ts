@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { Action } from '@ngrx/store';
-import { GeneralService } from '../services/general.service';
+import { GeneralService } from './general.service';
 import { Observable, of } from 'rxjs/index';
 import { catchError, map, mergeMap } from 'rxjs/internal/operators';
-import * as generalActions from '../actions/general.actions';
+import * as generalActions from './general.actions';
 
 
 
