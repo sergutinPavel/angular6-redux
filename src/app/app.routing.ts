@@ -16,15 +16,13 @@ export const routes: Routes = [
       {path: 'sign-up', component: SignUpComponent},
       // {path: 'reset', component: PasswordResetComponent},
       {path: '**', redirectTo: '/auth/sign-in', pathMatch: 'full'}
-    ]},
-  {
-    path: '', component: PageLayoutComponent, children: [
+  ]},
+  {path: '', component: PageLayoutComponent, children: [
       {path: '', component: AppSidebarComponent, outlet: 'navbar'},
       // {path: '', component: LeftBarComponent, outlet: 'leftbar'},
       {path: 'dashboard', component: DashboardComponent}
-    ]
-  },
-  {path: '**', redirectTo: '/dashboard', pathMatch: 'full'},
+  ]},
+  {path: '**', redirectTo: '/dashboard', pathMatch: 'full'}
 ];
 
 export const Routing: ModuleWithProviders = RouterModule.forRoot(routes, {useHash: false});
