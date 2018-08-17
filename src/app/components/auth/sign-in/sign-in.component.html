@@ -1,3 +1,36 @@
-<p>
-  sign-in works!
-</p>
+<div class="auth-layout">
+
+  <div class="auth-layout__container">
+    <form class="auth-layout__form"
+          [formGroup]="signInForm"
+          (ngSubmit)="onSubmit(signInForm)" novalidate>
+
+      <div class="auth-layout__header">
+        Welcome
+      </div>
+      <div class="auth-layout__body">
+
+        <mat-form-field appearance="outline">
+          <mat-label>Login</mat-label>
+          <input matInput class="auth-layout__input"
+                 placeholder="you@mail.com" formControlName="email">
+          <!--<mat-hint>Hint</mat-hint>-->
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput class="auth-layout__input"
+                 placeholder="******" formControlName="password">
+          <!--<mat-hint>Hint</mat-hint>-->
+        </mat-form-field>
+
+      </div>
+
+      <div class="auth-layout__actions">
+        <button mat-button class="btn btn-primary" type="submit">Sign in</button>
+      </div>
+
+    </form>
+  </div>
+
+</div>

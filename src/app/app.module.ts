@@ -2,14 +2,24 @@
 import { environment } from '../environments/environment';
 // libs
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  MatButtonModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatCheckboxModule,
+} from '@angular/material';
 // store
 import { reducers, metaReducers } from './store';
 import { RootEffects } from './store/root.effects';
 // services
+import { TokenInterceptor } from './services/token.interceptor';
+import { AuthService } from './store/auth/auth.service';
 import { GeneralService } from './store/general/general.service';
 // modules
 import { Routing } from './app.routing';
@@ -35,15 +45,24 @@ import { DashboardComponent } from './components/pages/dashboard/dashboard.compo
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     Routing,
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     RootEffects,
-    // Routing
+    // angular material
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCheckboxModule,
   ],
   providers: [
-    GeneralService
+    TokenInterceptor,
+    GeneralService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

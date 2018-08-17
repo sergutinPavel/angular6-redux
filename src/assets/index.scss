@@ -1,7 +1,9 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~bootstrap/dist/css/bootstrap-grid.css";
 @import "~bootstrap/dist/css/bootstrap-reboot.css";
 @import "~@mdi/font/css/materialdesignicons.css";
 
 @import "./general.scss";
-@import "./layout.scss";
+@import "./layout/root-layout";
+@import "./layout/auth-layout";

@@ -6,5 +6,5 @@
 export const environment = {
   production: false,
   test_api: 'http://thecatapi.com',
-  api_endpoint: 'http://localhost:4000'
+  api_endpoint: 'http://localhost:4000/api/v1'
 };
