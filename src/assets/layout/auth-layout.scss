@@ -11,7 +11,7 @@
     position: relative;
     flex: 1 1;
     max-width: 50rem;
-    box-shadow: 0 0 1rem $app-shadow-color;
+    box-shadow: 0 0 2rem $app-shadow-bbb-dark-color;
     background-color: $app-light-color;
     display: flex;
     flex-direction: column;
@@ -46,12 +46,13 @@
     border-top-right-radius: $app-m-radius;
   }
   .auth-layout__body {
-    justify-content: space-between;
+    justify-content: space-around;
+    flex-wrap: wrap;
   }
   .auth-layout__actions {}
 
-  // no use. shit still yellow
-  //.auth-layout__input.cdk-text-field-autofill-monitored:-webkit-autofill {
-  //  background-color: $app-light-color !important;
-  //}
+  .auth-layout__input.cdk-text-field-autofill-monitored:-webkit-autofill {
+    background-color: $app-light-color !important;
+    box-shadow: 0 0 0 1000px $app-light-color inset !important;
+  }
 }

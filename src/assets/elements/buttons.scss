@@ -1,0 +1,111 @@
+.btn {}
+
+.btn.btn-primary {
+  background-color: $app-primary-color;
+  border-color: $app-primary-color;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $app-primary-light-color;
+    border-color: $app-shadow-dark-color;
+    box-shadow: 0 0 0 .2rem $app-shadow-dark-color;
+  }
+  &:not(:disabled):not(.disabled):active:focus {
+    background-color: $app-primary-light-color;
+    border-color: $app-shadow-dark-color;
+    box-shadow: 0 0 0 .2rem $app-shadow-aaa-dark-color;
+  }
+  &:disabled {
+    color: $app-primary-color;
+    background-color: $app-primary-light-color;
+    cursor: not-allowed;
+  }
+}
+.btn.btn-success {
+  color: $app-shadow-light-color;
+  background-color: $app-green-light-color;
+  border-color: $app-green-light-color;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $app-green-color;
+    border-color: $app-shadow-dark-color;
+    box-shadow: 0 0 0 .2rem $app-green-light-color;
+  }
+  &:not(:disabled):not(.disabled):active:focus {
+    background-color: $app-green-color;
+    border-color: $app-shadow-dark-color;
+    box-shadow: 0 0 0 .2rem $app-green-light-color;
+  }
+  &:disabled {
+    color: $app-shadow-light-color;
+    background-color: $app-green-light-color;
+    cursor: not-allowed;
+  }
+}
+.btn-info {
+  color: $app-shadow-light-color;
+  background-color: $app-blue-color;
+  border-color: $app-blue-color;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $app-blue-light-color;
+    border-color: $app-shadow-light-color;
+    box-shadow: 0 0 0 .2rem $app-blue-color;
+  }
+  &:not(:disabled):not(.disabled):active:focus {
+    background-color: $app-blue-light-color;
+    border-color: $app-shadow-light-color;
+    box-shadow: 0 0 0 .2rem $app-blue-color;
+  }
+  &:disabled {
+    color: $app-shadow-dark-color;
+    background-color: $app-blue-light-color;
+    cursor: not-allowed;
+  }
+}
+.btn-warning {
+  color: $app-primary-color;
+  background-color: $app-yellow-color;
+  border-color: $app-yellow-color;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $app-yellow-light-color;
+    border-color: $app-shadow-light-color;
+    box-shadow: 0 0 0 .2rem $app-orange-light-color;
+  }
+  &:not(:disabled):not(.disabled):active:focus {
+    background-color: $app-yellow-light-color;
+    border-color: $app-shadow-light-color;
+    box-shadow: 0 0 0 .2rem $app-orange-light-color;
+  }
+  &:disabled {
+    color: $app-primary-color;
+    background-color: $app-yellow-light-color;
+    cursor: not-allowed;
+  }
+}
+.btn-danger {
+  color: $app-shadow-light-color;
+  background-color: $app-red-color;
+  border-color: $app-red-color;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $app-red-light-color;
+    border-color: $app-shadow-light-color;
+    box-shadow: 0 0 0 .2rem $app-red-color;
+  }
+  &:not(:disabled):not(.disabled):active:focus {
+    background-color: $app-red-light-color;
+    border-color: $app-shadow-light-color;
+    box-shadow: 0 0 0 .2rem $app-red-color;
+  }
+  &:disabled {
+    color: $app-shadow-light-color;
+    background-color: $app-red-light-color;
+    cursor: not-allowed;
+  }
+}
