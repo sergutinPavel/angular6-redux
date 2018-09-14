@@ -1,7 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { State } from './store/';
-import { Subscription } from 'rxjs/index';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',

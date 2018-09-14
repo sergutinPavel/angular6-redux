@@ -6,18 +6,20 @@
           (ngSubmit)="onSubmit(signInForm)" novalidate>
 
       <div class="auth-layout__header">
-        Welcome
+        <div class="auth-header">
+          Welcome
+        </div>
       </div>
-      <div class="auth-layout__body">
+      <div class="auth-layout__body auth-body">
 
-        <mat-form-field appearance="outline">
+        <mat-form-field>
           <mat-label>Login</mat-label>
           <input matInput class="auth-layout__input" name="login"
                  placeholder="you@mail.com" formControlName="email">
           <!--<mat-hint>Hint</mat-hint>-->
         </mat-form-field>
 
-        <mat-form-field appearance="outline">
+        <mat-form-field>
           <mat-label>Password</mat-label>
           <input type="password" matInput class="auth-layout__input" name="password"
                  placeholder="******" formControlName="password">
@@ -27,7 +29,7 @@
       </div>
 
       <div class="auth-layout__actions">
-        <button mat-button class="btn btn-success" type="submit">Sign in</button>
+        <button mat-button class="btn btn-default btn-large" type="submit">Sign in</button>
       </div>
 
     </form>

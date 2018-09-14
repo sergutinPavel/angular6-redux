@@ -1,111 +1,99 @@
-.btn {}
+.btn {
+  font-size: 1.4rem;
+}
+.btn.mat-button {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  border-radius: .4rem;
+  padding: 1rem 3rem;
+  box-shadow: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  &:active {
+    //box-shadow: none;
+    //border: none;
+  }
+  &:not(:disabled):not(.disabled):active:focus {
+    //box-shadow: none;
+    //border: none;
+  }
+  &:disabled {
+    //box-shadow: none;
+    //border: none;
+    cursor: not-allowed;
+  }
+}
+//sizes
+.btn.mat-button.btn-small {
+  font-size: 1.2rem;
+  padding: .2rem 1.6rem;
+  min-width: auto;
+}
+.btn.mat-button.btn-large {
+  font-size: 1.6rem;
+  padding: 1.6rem 3.4rem;
+}
 
-.btn.btn-primary {
-  background-color: $app-primary-color;
-  border-color: $app-primary-color;
-  &:hover,
-  &:focus,
-  &:active {
-    background-color: $app-primary-light-color;
-    border-color: $app-shadow-dark-color;
-    box-shadow: 0 0 0 .2rem $app-shadow-dark-color;
+@mixin btn-style($color, $light-color, $dark-color, $text-color, $ripple-color) {
+  background-color: $color;
+  color: $app-light-color;
+  @include mat-ripple-theme($ripple-color);
+  .mat-button-focus-overlay {
+    background-color: rgba($light-color, .12);
+    color: $text-color;
   }
+  &:active,
   &:not(:disabled):not(.disabled):active:focus {
-    background-color: $app-primary-light-color;
-    border-color: $app-shadow-dark-color;
-    box-shadow: 0 0 0 .2rem $app-shadow-aaa-dark-color;
+    background-color: $dark-color;
+    color: $text-color;
   }
   &:disabled {
-    color: $app-primary-color;
-    background-color: $app-primary-light-color;
-    cursor: not-allowed;
+    background-color: $light-color;
+    color: $dark-color;
   }
 }
-.btn.btn-success {
-  color: $app-shadow-light-color;
-  background-color: $app-green-light-color;
-  border-color: $app-green-light-color;
-  &:hover,
-  &:focus,
-  &:active {
-    background-color: $app-green-color;
-    border-color: $app-shadow-dark-color;
-    box-shadow: 0 0 0 .2rem $app-green-light-color;
-  }
-  &:not(:disabled):not(.disabled):active:focus {
-    background-color: $app-green-color;
-    border-color: $app-shadow-dark-color;
-    box-shadow: 0 0 0 .2rem $app-green-light-color;
-  }
-  &:disabled {
-    color: $app-shadow-light-color;
-    background-color: $app-green-light-color;
-    cursor: not-allowed;
-  }
+
+.custom-mat-purple-theme .btn.btn-default {
+  @include btn-style(mat-color($my-theme-primary, 700),
+          rgba(mat-color($my-theme-primary, 700), .4),
+          mat-color($my-theme-primary, 900),
+          $app-light-color,
+          mat-color($my-theme-primary, 700));
+  background-color: rgba(mat-color($my-theme-primary, 700), 0);
+  color: mat-color($my-theme-primary, 700);
 }
-.btn-info {
-  color: $app-shadow-light-color;
-  background-color: $app-blue-color;
-  border-color: $app-blue-color;
-  &:hover,
-  &:focus,
-  &:active {
-    background-color: $app-blue-light-color;
-    border-color: $app-shadow-light-color;
-    box-shadow: 0 0 0 .2rem $app-blue-color;
-  }
-  &:not(:disabled):not(.disabled):active:focus {
-    background-color: $app-blue-light-color;
-    border-color: $app-shadow-light-color;
-    box-shadow: 0 0 0 .2rem $app-blue-color;
-  }
-  &:disabled {
-    color: $app-shadow-dark-color;
-    background-color: $app-blue-light-color;
-    cursor: not-allowed;
-  }
+.custom-mat-purple-theme .btn.btn-primary {
+  @include btn-style(mat-color($my-theme-primary, 700),
+          mat-color($my-theme-primary, 300),
+          mat-color($my-theme-primary, 900),
+          $app-light-color,
+          mat-color($my-theme-primary, 300));
 }
-.btn-warning {
-  color: $app-primary-color;
-  background-color: $app-yellow-color;
-  border-color: $app-yellow-color;
-  &:hover,
-  &:focus,
-  &:active {
-    background-color: $app-yellow-light-color;
-    border-color: $app-shadow-light-color;
-    box-shadow: 0 0 0 .2rem $app-orange-light-color;
-  }
-  &:not(:disabled):not(.disabled):active:focus {
-    background-color: $app-yellow-light-color;
-    border-color: $app-shadow-light-color;
-    box-shadow: 0 0 0 .2rem $app-orange-light-color;
-  }
-  &:disabled {
-    color: $app-primary-color;
-    background-color: $app-yellow-light-color;
-    cursor: not-allowed;
-  }
+.custom-mat-purple-theme .btn.btn-success {
+  @include btn-style($app-green-color,
+          rgba($app-green-color, .4),
+          $app-green-color--dark,
+          $app-light-color,
+          $app-light-color);
 }
-.btn-danger {
-  color: $app-shadow-light-color;
-  background-color: $app-red-color;
-  border-color: $app-red-color;
-  &:hover,
-  &:focus,
-  &:active {
-    background-color: $app-red-light-color;
-    border-color: $app-shadow-light-color;
-    box-shadow: 0 0 0 .2rem $app-red-color;
-  }
-  &:not(:disabled):not(.disabled):active:focus {
-    background-color: $app-red-light-color;
-    border-color: $app-shadow-light-color;
-    box-shadow: 0 0 0 .2rem $app-red-color;
-  }
-  &:disabled {
-    color: $app-shadow-light-color;
-    background-color: $app-red-light-color;
-    cursor: not-allowed;
-  }
+.custom-mat-purple-theme .btn.btn-info {
+  @include btn-style($app-blue-color,
+          rgba($app-blue-color, .4),
+          $app-blue-color--dark,
+          $app-light-color,
+          $app-light-color);
+}
+.custom-mat-purple-theme .btn.btn-warning {
+  @include btn-style($app-yellow-color,
+          rgba($app-yellow-color, .4),
+          $app-yellow-color--dark,
+          $app-light-color,
+          $app-light-color);
+}
+.custom-mat-purple-theme .btn.btn-danger {
+  @include btn-style($app-secondary-color,
+          rgba($app-secondary-color, .4),
+          $app-secondary-color--dark,
+          $app-light-color,
+          $app-light-color);
 }

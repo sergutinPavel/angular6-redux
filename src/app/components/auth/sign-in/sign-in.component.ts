@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { AuthService } from '../../../store/auth/auth.service';
 import {Store} from '@ngrx/store';
 import {State} from '../../../store';
+import {SignInAction} from '../../../store/auth/auth.actions';
 
 
 @Component({
@@ -37,10 +38,7 @@ export class SignInComponent implements OnInit, OnDestroy {
     const email: string = this.signInForm.get('email').value.trim();
     const password: string = this.signInForm.get('password').value.trim();
 
-    // todo: dispatch action from store
-    // this.subs.email = this._authService.signIn(email, password).subscribe(v => {
-    //   console.log('onSubmit, result', v);
-    // });
+    this._store.dispatch(new SignInAction({email, password}));
   }
 
 }

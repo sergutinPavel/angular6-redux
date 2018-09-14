@@ -1,17 +1,9 @@
-// colors
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~@angular/material/theming';
 
-$app-primary-color: #303952;
-$app-primary-light-color: #596275;
-$app-orange-color: #f19066;
-$app-orange-light-color: #f3a683;
-$app-yellow-color: #f5cd79;
-$app-yellow-light-color: #f7d794;
-$app-red-color: #e15f41;
-$app-red-light-color: #e77f67;
-$app-blue-color: #546de5;
-$app-blue-light-color: #778beb;
-$app-green-color: #138770;
-$app-green-light-color: #19bc9c;
+//typography
+
+// colors
 
 $app-shadow-aaa-dark-color: #aaa;
 $app-shadow-bbb-dark-color: #bbb;
@@ -20,9 +12,49 @@ $app-shadow-color: #eee;
 $app-shadow-light-color: #efefef;
 $app-light-color: #fff;
 
+$app-rose-color: #e91e63;
+$app-primary-color: #9c27b0;
+$app-primary-color--dark: #7b1fa2;
+$app-secondary-color: #f44336;
+$app-secondary-color--dark: #d32f2f;
+$app-blue-color: #00bcd4;
+$app-blue-color--dark: #099bc1;
+$app-green-color: #4caf50;
+$app-green-color--dark: #298f3e;
+$app-yellow-color: #ff9800;
+$app-yellow-color--dark: #d27d00;
+
 
 // sizes
 $app-l-radius: 1.2rem;
 $app-m-radius: .6rem;
 $app-s-radius: .3rem;
 
+
+// always include only once per project
+@include mat-core();
+// define 3 theme color
+// mat-palette accepts $palette-name, main, lighter and darker variants
+$my-theme-primary: mat-palette($mat-light-blue, 700, 300, 900);
+$my-theme-accent: mat-palette($mat-purple);
+$my-theme-warn: mat-palette($mat-deep-orange, A200);
+
+// create theme (use mat-dark-theme for themes with dark backgrounds)
+$my-theme: mat-light-theme(
+  $my-theme-primary,
+  $my-theme-accent,
+  $my-theme-warn
+);
+
+// specify theme class eg: <body class="custom-mat-purlpe-theme"> ... </body>
+.custom-mat-purple-theme {
+  // use our theme with angular-material-theme mixin
+  @include angular-material-theme($my-theme);
+}
+
+//ripple effect for buttons
+@mixin mat-ripple-theme($color) {
+  .mat-ripple-element {
+    background-color: rgba($color, .4);
+  }
+}

@@ -4,6 +4,7 @@
 @import "~bootstrap/dist/css/bootstrap-reboot.css";
 @import "~@mdi/font/css/materialdesignicons.css";
 
+@import "./global-variables";
 @import "./general.scss";
 @import "./layout/root-layout";
 @import "./layout/auth-layout";

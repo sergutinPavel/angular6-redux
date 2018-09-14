@@ -28,7 +28,7 @@ export function reducer(state = initialState, action: AuthActions.Actions): Stat
     case AuthActions.ActionTypes.SignInAction:
       return { ...state, userStatus: { loading: true, loaded: false, error: false } };
     case AuthActions.ActionTypes.SignInActionSuccess:
-      return { ...state, user: action.payload, userStatus: { loading: false, loaded: true, error: false } };
+      return { ...state, token: action.payload.token, user: action.payload, userStatus: { loading: false, loaded: true, error: false } };
     case AuthActions.ActionTypes.SignInActionFail:
       return { ...state, user: action.payload, userStatus: { loading: false, loaded: false, error: action.payload } };
     default:
