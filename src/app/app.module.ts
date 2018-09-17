@@ -18,6 +18,7 @@ import {
 import {reducers, metaReducers} from './store';
 import {RootEffects} from './store/root.effects';
 // services
+import {AuthGuard, NoAuthGuard} from './services/auth.guard';
 import {TokenInterceptor} from './services/token.interceptor';
 import {AuthService} from './store/auth/auth.service';
 import {GeneralService} from './store/general/general.service';
@@ -60,9 +61,11 @@ import {DashboardComponent} from './components/pages/dashboard/dashboard.compone
     MatCheckboxModule,
   ],
   providers: [
+    AuthGuard,
+    NoAuthGuard,
     TokenInterceptor,
     GeneralService,
-    AuthService
+    AuthService,
   ],
   bootstrap: [AppComponent]
 })

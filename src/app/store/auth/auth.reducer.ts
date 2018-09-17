@@ -22,7 +22,14 @@ export const initialState: State = {
   }
 };
 
-export function reducer(state = initialState, action: AuthActions.Actions): State {
+export const authorizedState: State = {
+  ...initialState,
+  user: localStorage.getItem('user') ? initialState.user = JSON.parse(localStorage.getItem('user')) : null,
+  token: localStorage.getItem('token') ? initialState.user = JSON.parse(localStorage.getItem('token')) : null,
+};
+
+
+export function reducer(state = authorizedState, action: AuthActions.Actions): State {
   switch (action.type) {
 
     case AuthActions.ActionTypes.SignInAction:
@@ -31,10 +38,13 @@ export function reducer(state = initialState, action: AuthActions.Actions): Stat
       return { ...state, token: action.payload.token, user: action.payload, userStatus: { loading: false, loaded: true, error: false } };
     case AuthActions.ActionTypes.SignInActionFail:
       return { ...state, user: action.payload, userStatus: { loading: false, loaded: false, error: action.payload } };
+    case AuthActions.ActionTypes.LogoutAction:
+      return { ...initialState };
     default:
       return state;
   }
 }
 
 export const getUser = (state: State) => state.user;
+export const getUserStatus = (state: State) => state.userStatus;
 export const getToken = (state: State) => state.token;

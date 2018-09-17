@@ -29,7 +29,9 @@
       </div>
 
       <div class="auth-layout__actions">
-        <button mat-button class="btn btn-default btn-large" type="submit">Sign in</button>
+        <button mat-button class="btn btn-default btn-large" type="submit" [disabled]="(userStatus | async).loading">
+          Sign in
+        </button>
       </div>
 
     </form>

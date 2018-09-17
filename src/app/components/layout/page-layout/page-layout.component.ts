@@ -1,8 +1,9 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ToggleSidebarAction } from '../../../store/general/general.actions';
-import { Observable, Subscription } from 'rxjs/index';
-import { Store } from '@ngrx/store';
-import { State, selectExpandSidebar } from '../../../store';
+import {Component, OnInit, OnDestroy} from '@angular/core';
+import {ToggleSidebarAction} from '../../../store/general/general.actions';
+import {Observable, Subscription} from 'rxjs/index';
+import {Store} from '@ngrx/store';
+import {State, selectExpandSidebar} from '../../../store';
+import {LogoutAction} from '../../../store/auth/auth.actions';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { State, selectExpandSidebar } from '../../../store';
   styleUrls: ['./page-layout.component.css']
 })
 export class PageLayoutComponent implements OnInit, OnDestroy {
-  subs: {[name: string]: Subscription} = {};
+  subs: { [name: string]: Subscription } = {};
   expandSidebar$: Observable<any>;
   expandSidebar: boolean;
 
@@ -23,7 +24,6 @@ export class PageLayoutComponent implements OnInit, OnDestroy {
       // console.warn('this.expandSidebar$', x);
     });
   }
-
   ngOnInit() {
   }
   ngOnDestroy() {
@@ -32,6 +32,10 @@ export class PageLayoutComponent implements OnInit, OnDestroy {
 
   toggleSidebar(v?: undefined | boolean): void {
     this._store.dispatch(new ToggleSidebarAction(v));
+  }
+
+  logout() {
+    this._store.dispatch(new LogoutAction);
   }
 
 }

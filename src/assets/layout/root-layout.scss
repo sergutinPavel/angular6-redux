@@ -57,7 +57,7 @@ app-page-layout {
     width: 100%;
   }
   .app-page-layout__header {
-    height: 6rem;
+    height: $app-page-header-height;
   }
   .app-page-layout__container {
     flex: 1;

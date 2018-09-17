@@ -97,3 +97,70 @@
           $app-light-color,
           $app-light-color);
 }
+
+.btn.page-action-btn {
+  position: relative;
+  margin: 0 .4rem;
+  background-color: transparent;
+  transition: all .3s ease-in;
+  padding: 1rem;
+  text-transform: capitalize;
+  font-weight: 400;
+  &:hover {
+    cursor: pointer;
+    background-color: rgba($app-light-color, .1);
+    transition: all .3s ease-out;
+  }
+  &:active,
+  &:not(:disabled):not(.disabled):active:focus {
+    background-color: rgba($app-light-color, .2);
+    border-color: rgba($app-light-color, .4);
+    transition: all .3s ease-out;
+  }
+}
+
+.toggle-menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  margin: 0 1rem;
+  span:after,
+  span:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -0.9rem;
+  }
+  span:after{
+    top: .9rem;
+  }
+  span {
+    position: relative;
+    display: block;
+  }
+  span,
+  span:after,
+  span:before {
+    width: 100%;
+    height: .5rem;
+    background-color: $app-light-color;
+    transition: all 0.3s;
+    backface-visibility: hidden;
+    border-radius: $app-s-radius;
+  }
+  &.on span {
+    background-color: transparent;
+  }
+  &.on span:before {
+    transform: translate(0, 175%) rotate(45deg) ;
+  }
+  &.on span:after {
+    transform: translate(0, -175%) rotate(-45deg) ;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}

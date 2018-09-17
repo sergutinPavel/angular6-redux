@@ -37,4 +37,5 @@ export const getAuthState = (state): fromAuth.State => {
 };
 // GENERAL FEATURE SELECTORS
 export const selectUser = createSelector(getAuthState, fromAuth.getUser);
+export const selectUserStatus = createSelector(getAuthState, fromAuth.getUserStatus);
 export const selectToken = createSelector(getAuthState, fromAuth.getToken);

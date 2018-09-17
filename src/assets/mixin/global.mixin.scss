@@ -1,0 +1,16 @@
+@mixin primary-font() {
+  font-family: 'Segoe UI', 'Helvetica', sans-serif;
+}
+@mixin curve-font() {
+  font-family: "Roboto Slab", "Times New Roman", serif;
+}
+@mixin gradient-background($color1, $color2, $text-color, $angle: 60deg) {
+  background: linear-gradient(60deg, $color1, $color2);
+  color: $text-color;
+}
+@mixin box-shadow-bottom($shadow-color, $accent-color) {
+  box-shadow: 0 .5rem 2rem 0 rgba($shadow-color, .2), 0 1.5rem 2.2rem -1rem rgba($accent-color, 0.6);
+}
+@mixin box-shadow-bottom--thin($shadow-color, $accent-color) {
+  box-shadow: 0 .5rem 1rem .2rem rgba($shadow-color, .2), 0 0rem .5rem .3rem rgba($accent-color, 0.6);
+}

@@ -2,7 +2,7 @@ html {
   font-size: 10px;
 }
 body {
-  font-family: 'Segoe UI', 'Helvetica', sans-serif;
+  @include primary-font();
   overflow: hidden;
   font-size: 1.6rem;
 }

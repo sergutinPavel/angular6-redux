@@ -5,7 +5,7 @@
 @import "~@mdi/font/css/materialdesignicons.css";
 
 @import "./global-variables";
+@import "./mixin/index";
 @import "./general.scss";
-@import "./layout/root-layout";
-@import "./layout/auth-layout";
+@import "./layout/index";
 @import "./elements/index";

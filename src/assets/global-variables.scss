@@ -1,10 +1,10 @@
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import '~@angular/material/theming';
 
 //typography
 
 // colors
 
+$app-black-color: #000;
 $app-shadow-aaa-dark-color: #aaa;
 $app-shadow-bbb-dark-color: #bbb;
 $app-shadow-dark-color: #ddd;
@@ -29,6 +29,7 @@ $app-yellow-color--dark: #d27d00;
 $app-l-radius: 1.2rem;
 $app-m-radius: .6rem;
 $app-s-radius: .3rem;
+$app-page-header-height: 6rem;
 
 
 // always include only once per project

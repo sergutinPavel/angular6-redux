@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+  width: 100%;
   background-color: $app-shadow-light-color;
   .auth-layout__container {
     position: relative;
@@ -67,23 +68,30 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  background: linear-gradient(60deg, $app-primary-color, $app-primary-color--dark);
-  //box-shadow: 0 .2rem .4rem $app-primary-color;
-  box-shadow: 0 .5rem 2rem 0 rgba(0,0,0,.2), 0 1.5rem 2.2rem -1rem rgba(156, 39, 176, 0.6);
+  @include gradient-background($app-primary-color, $app-primary-color--dark, $app-light-color);
+  @include box-shadow-bottom($app-black-color, $app-primary-color);
   border-radius: $app-s-radius;
-  color: $app-shadow-color;
   padding: 3rem 3rem 5rem;
   margin: -4rem 0 0;
-  font-family: "Roboto Slab", "Times New Roman", serif;
+  //font-family: "Roboto Slab", "Times New Roman", serif;
   font-weight: 800;
   font-size: 2rem;
-  //border-top-left-radius: $app-m-radius;
-  //border-top-right-radius: $app-m-radius;
 }
 
 .auth-body {
   .mat-form-field,
   .mat-form-field-infix {
     width: 100%;
+  }
+}
+
+@media all and (max-width: 575.98px) {
+  .auth-layout {
+
+    .auth-layout__container {
+      min-width: auto;
+      width: 100%;
+      margin: 0 10%;
+    }
   }
 }
