@@ -124,18 +124,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 3rem;
-  height: 3rem;
+  width: 4rem;
+  height: 4rem;
   margin: 0 1rem;
   span:after,
   span:before {
     content: "";
     position: absolute;
     left: 0;
-    top: -0.9rem;
+    top: -175%
   }
-  span:after{
-    top: .9rem;
+  span:after {
+    top: 180%;
   }
   span {
     position: relative;
