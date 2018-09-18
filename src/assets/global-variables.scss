@@ -52,10 +52,3 @@ $my-theme: mat-light-theme(
   // use our theme with angular-material-theme mixin
   @include angular-material-theme($my-theme);
 }
-
-//ripple effect for buttons
-@mixin mat-ripple-theme($color) {
-  .mat-ripple-element {
-    background-color: rgba($color, .4);
-  }
-}

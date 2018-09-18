@@ -4,6 +4,12 @@
 @mixin curve-font() {
   font-family: "Roboto Slab", "Times New Roman", serif;
 }
+//ripple effect for buttons
+@mixin mat-ripple-theme($color) {
+  .mat-ripple-element {
+    background-color: rgba($color, .4);
+  }
+}
 @mixin gradient-background($color1, $color2, $text-color, $angle: 60deg) {
   background: linear-gradient(60deg, $color1, $color2);
   color: $text-color;
